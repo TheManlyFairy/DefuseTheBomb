@@ -15,10 +15,13 @@ public class CodeManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		button1.codeNumber = Random.Range(1,6);
+		MakeCodeNumber (button1.codeNumber);
+
 		codeNumber1 = button1.codeNumber;
 		codeNumber2 = button2.codeNumber;
 		codeNumber3 = button3.codeNumber;
-		
+
 	}
 	
 	// Update is called once per frame
@@ -27,5 +30,49 @@ public class CodeManager : MonoBehaviour {
 		if (button1.buttonInputControll.isOnRightStep && button2.buttonInputControll.isOnRightStep && button3.buttonInputControll.isOnRightStep)
 			Debug.Log ("You diffused the bomb and saved millions of lives!\nGet this man a cookie!");
 		
+	}
+
+	void MakeCodeNumber(int firstCodeNumber)
+	{
+
+		switch (firstCodeNumber) 
+		{
+		case 1:
+			
+			button2.codeNumber = firstCodeNumber + 1;
+			button3.codeNumber = firstCodeNumber + 3;
+			break;
+
+		case 2:
+
+			button2.codeNumber = firstCodeNumber + 3;
+			button3.codeNumber = firstCodeNumber - 1;
+			break;
+		case 3:
+
+			button2.codeNumber = firstCodeNumber - 2;
+			button3.codeNumber = firstCodeNumber + 3;
+			break;
+		case 4:
+
+			button2.codeNumber = firstCodeNumber + 1;
+			button3.codeNumber = firstCodeNumber - 2;
+			break;
+		case 5:
+
+			button2.codeNumber = firstCodeNumber + 1;
+			button3.codeNumber = firstCodeNumber - 3;
+			break;
+		case 6:
+
+			button2.codeNumber = firstCodeNumber - 1;
+			button3.codeNumber = firstCodeNumber - 3;
+			break;
+	
+			default:
+			Debug.Log("Nothing works");
+			break;
+		}
+
 	}
 }

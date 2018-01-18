@@ -11,7 +11,7 @@ public class LightSwitchColorChange : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
 	{
-		codeNumber = Random.Range(1,6);
+		//codeNumber = Random.Range(1,6);
 		buttonInputControll = GetComponent<ButtonInputControl> ();
 	}
 	
