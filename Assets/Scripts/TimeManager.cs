@@ -21,7 +21,6 @@ public class TimeManager : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
 
         countdownDelay = 1f;
 
@@ -33,10 +32,7 @@ public class TimeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene(1);
-        }
+        
 	}
 
     IEnumerator Countdown()
