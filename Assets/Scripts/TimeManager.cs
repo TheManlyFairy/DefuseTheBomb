@@ -10,23 +10,23 @@ public class TimeManager : MonoBehaviour {
     public int minutes, seconds;
     float countdownDelay;
 
-    Text text;
+    public Text timerText;
 
 	// Use this for initialization
 	void Start ()
     {
         if (timeManager == null)
+        {
             timeManager = this;
+            StartCoroutine(Countdown());
+            countdownDelay = 1f;
+            Time.timeScale = 1;
+        }
         else
         {
+            Destroy(timerText.gameObject);
             Destroy(this.gameObject);
         }
-
-        countdownDelay = 1f;
-
-        text = GetComponent<Text>();
-
-        StartCoroutine(Countdown());
 	}
 	
 	// Update is called once per frame
@@ -47,7 +47,7 @@ public class TimeManager : MonoBehaviour {
                 minutes--;
             }
 
-            text.text = DigitalTimeDisplay();
+            timerText.text = DigitalTimeDisplay();
         }
     }
 
