@@ -10,19 +10,23 @@ public class ShapeButtonManager : MonoBehaviour {
     static List<ShapeButton> staticButtons;
     Dictionary<Texture, int> dict;
     static int nextButton;
+    public bool isFocused;
 
     void Awake () 
     {
         if (sbManager == null)
+        {
+            InitDictionary(); // for storing each textures and its order ID
+            ShuffleTextures(); // shuffles the texture list
+            InitButtons(); // initiate four buttons with random textures
+            staticButtons = buttons;
+            nextButton = 0;
             sbManager = this;
+            isFocused = true;
+        }
+            
         else
             Destroy(this.gameObject);
-
-        InitDictionary(); // for storing each textures and its order ID
-        ShuffleTextures(); // shuffles the texture list
-        InitButtons(); // initiate four buttons with random textures
-        staticButtons = buttons;
-        nextButton = 0;
     }
 
     void InitButtons()

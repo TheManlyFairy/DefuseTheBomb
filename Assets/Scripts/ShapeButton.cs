@@ -21,15 +21,18 @@ public class ShapeButton : MonoBehaviour, IComparable<ShapeButton> {
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetMouseButtonDown(0))
+       if(sbm.isFocused)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100))
-                if (!hit.collider.gameObject.GetComponent<ShapeButton>().isPressed)
-                {
-                    ShapeButtonManager.CheckPressOrder(hit.collider.gameObject.GetComponent<ShapeButton>().orderID);
-                }
+            if (Input.GetMouseButtonDown(0))
+            {
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, 100))
+                    if (!hit.collider.gameObject.GetComponent<ShapeButton>().isPressed)
+                    {
+                        ShapeButtonManager.CheckPressOrder(hit.collider.gameObject.GetComponent<ShapeButton>().orderID);
+                    }
+            }
         }
 	}
 
