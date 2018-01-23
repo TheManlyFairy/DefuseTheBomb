@@ -5,22 +5,36 @@ using UnityEngine;
 public class WireManager : MonoBehaviour {
 
     public Wire prefabWire;
+    public WireManager wireManager;
+    public float wireHeight;
+    public float spaceBetweenWires;
+
     Wire[] instWires;
     Color[] colors = { Color.red, Color.blue, Color.yellow, Color.white, Color.black };
     int wireToCut;
+
 	
     // Use this for initialization
 	void Start ()
     {
-        CreateWires();
-        CalculateWireToCut();
-        Debug.Log("cut wire number " + (wireToCut+1));
+        if(wireManager==null)
+        {
+            wireManager = this;
+            CreateWires();
+            CalculateWireToCut();
+            Debug.Log("cut wire number " + (wireToCut + 1));
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        this.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -40,15 +54,16 @@ public class WireManager : MonoBehaviour {
     void CreateWires()
     {
         int amountOfWires = Random.Range(4, 7);
-        float posY = amountOfWires - 1;
+        float firstWirePosY = transform.position.y + ((amountOfWires - 1) * 0.3f);
         Vector2 pos;
         instWires = new Wire[amountOfWires];
         
         for (int i=0; i<instWires.Length; i++)
         {
-            pos = new Vector2(0, posY + (-2 * i));
+            pos = new Vector2(0, firstWirePosY + (spaceBetweenWires * i));
             instWires[i] = Instantiate(prefabWire, pos, transform.rotation);
             instWires[i].Colorize(colors[Random.Range(0, colors.Length)]);
+            instWires[i].transform.localScale = new Vector3(instWires[i].transform.localScale.x, wireHeight, instWires[i].transform.localScale.z);
         }
     }
 
