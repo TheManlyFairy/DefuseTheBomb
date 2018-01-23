@@ -18,30 +18,12 @@ public class ShapeButton : MonoBehaviour, IComparable<ShapeButton> {
         sbm = ShapeButtonManager.sbManager;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-       if(sbm.isFocused)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit, 100))
-                    if (!hit.collider.gameObject.GetComponent<ShapeButton>().isPressed)
-                    {
-                        ShapeButtonManager.CheckPressOrder(hit.collider.gameObject.GetComponent<ShapeButton>().orderID);
-                    }
-            }
-        }
-	}
-
+	public bool IsPressed() { return isPressed; }
     public void LightUp()
     {
         isPressed = true;
         ButtonLight.SetColor("_EmissionColor", Color.green);
     }
-
     public void LightOff()
     {
         isPressed = false;

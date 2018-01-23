@@ -10,7 +10,7 @@ public class ShapeButtonManager : MonoBehaviour {
     static List<ShapeButton> staticButtons;
     Dictionary<Texture, int> dict;
     static int nextButton;
-    public bool isFocused;
+    LayerMask lightMask;
 
     void Awake () 
     {
@@ -21,12 +21,31 @@ public class ShapeButtonManager : MonoBehaviour {
             InitButtons(); // initiate four buttons with random textures
             staticButtons = buttons;
             nextButton = 0;
+            lightMask = ~(1 << 8);
             sbManager = this;
-            isFocused = true;
         }
             
         else
             Destroy(this.gameObject);
+    }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 30f, lightMask))
+            {
+                if (!hit.collider.gameObject.GetComponent<ShapeButton>().IsPressed())
+                {
+                    CheckPressOrder(hit.collider.gameObject.GetComponent<ShapeButton>().orderID);
+                }
+                else if (!hit.collider.gameObject.transform.parent.GetComponent<ShapeButton>().IsPressed())
+                {
+                    CheckPressOrder(hit.collider.gameObject.transform.parent.GetComponent<ShapeButton>().orderID);
+                }
+            }
+        }
     }
 
     void InitButtons()
