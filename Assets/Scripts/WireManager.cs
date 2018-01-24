@@ -55,12 +55,12 @@ public class WireManager : MonoBehaviour {
     {
         int amountOfWires = Random.Range(4, 7);
         float firstWirePosY = transform.position.y + ((amountOfWires - 1) * 0.3f);
-        Vector2 pos;
+        Vector3 pos;
         instWires = new Wire[amountOfWires];
         
         for (int i=0; i<instWires.Length; i++)
         {
-            pos = new Vector2(transform.position.x, firstWirePosY + (spaceBetweenWires * i));
+            pos = new Vector3(transform.position.x, firstWirePosY + (spaceBetweenWires * i), transform.position.z);
             instWires[i] = Instantiate(prefabWire, pos, transform.rotation);
             instWires[i].Colorize(colors[Random.Range(0, colors.Length)]);
             instWires[i].transform.localScale = new Vector3(instWires[i].transform.localScale.x, wireHeight, instWires[i].transform.localScale.z);

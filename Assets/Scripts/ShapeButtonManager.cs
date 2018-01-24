@@ -27,6 +27,7 @@ public class ShapeButtonManager : MonoBehaviour {
             
         else
             Destroy(this.gameObject);
+        this.enabled = false;
     }
     void Update()
     {

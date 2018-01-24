@@ -10,7 +10,7 @@ public class TimeManager : MonoBehaviour {
     public int minutes, seconds;
     float countdownDelay;
 
-    public Text timerText;
+    Text timerText;
 
 	// Use this for initialization
 	void Start ()
@@ -18,9 +18,10 @@ public class TimeManager : MonoBehaviour {
         if (timeManager == null)
         {
             timeManager = this;
-            StartCoroutine(Countdown());
+            timerText = GetComponent<Text>();
             countdownDelay = 1f;
             Time.timeScale = 1;
+            StartCoroutine(Countdown());
         }
         else
         {
