@@ -70,7 +70,7 @@ public class MazePuzzleManager : MonoBehaviour {
         {
             for (int c = 0; c < board.Size.y; c++)
             {
-                GameObject tile = Instantiate(tile_prefab, new Vector3(origin.x+c* tile_size.x, 0, origin.y+r*tile_size.z), tile_prefab.transform.rotation);
+                GameObject tile = Instantiate(tile_prefab, new Vector3(origin.x+c* tile_size.x, origin.y + r * tile_size.y,transform.position.z ), gameObject.transform.rotation);
                 tile.transform.parent = gameObject.transform;
                 if ((c + r * board.Size.y) % 2 == 0)
                     tile.GetComponent<Renderer>().material = mat1;
@@ -82,9 +82,11 @@ public class MazePuzzleManager : MonoBehaviour {
                 }
                 if (board.StartPos.x==c && board.StartPos.y==r)
                 {
-                    player=Instantiate(player_prefab,new Vector3(tile.transform.position.x,0.5f, tile.transform.position.z), Quaternion.identity);
+                    //Debug.Log();
+                    player=Instantiate(player_prefab,new Vector3(tile.transform.position.x, tile.transform.position.y, -player_prefab.GetComponent<Renderer>().bounds.size.z / 2), Quaternion.identity);
                     player.transform.parent = gameObject.transform;
                     start_pos = player.transform.position;
+                    //start_pos = new Vector3(tile.transform.position.x, tile.transform.position.y, -player_prefab.GetComponent<Renderer>().bounds.size.z / 2);
                 }
                 else if(board.EndPos.x==c && board.EndPos.y==r)
                 {
@@ -98,7 +100,7 @@ public class MazePuzzleManager : MonoBehaviour {
     {
         audio.clip = fail;
         audio.Play();
-        player.transform.position = start_pos;
+        player.transform.localPosition = start_pos;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         StartCoroutine(PlayerSleep());
     }

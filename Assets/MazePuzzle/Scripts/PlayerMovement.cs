@@ -12,13 +12,13 @@ public class PlayerMovement : MonoBehaviour {
     private void Update()
     {
         float x = Input.acceleration.x * speed * Time.deltaTime;
-        float z = Input.acceleration.y * speed * Time.deltaTime;
-        transform.Translate(x, 0, z);
+        float y = Input.acceleration.y * speed * Time.deltaTime;
+        transform.Translate(x, y,0);
     }
 
-    private void LateUpdate()
-    {
-        if (Mathf.Abs(gameObject.transform.position.y-0.5f)>max_delta_y)
-            MazePuzzleManager.instance.Fail();
-    }
+    //private void LateUpdate()
+    //{
+    //    if (Mathf.Abs(gameObject.transform.position.y-gameObject.GetComponent<Renderer>().bounds.size.y)>max_delta_y)
+    //        MazePuzzleManager.instance.Fail();
+    //}
 }
