@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b65870c965ec5fe4dad600b98a1d5fe2
 folderAsset: yes
 timeCreated: 1516873232
+=======
+guid: 3eede69896c684a40975984dc24f9c82
+folderAsset: yes
+timeCreated: 1516866540
+>>>>>>> Shape_Buttons
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
