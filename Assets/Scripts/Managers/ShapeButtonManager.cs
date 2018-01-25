@@ -24,11 +24,11 @@ public class ShapeButtonManager : MonoBehaviour {
             lightMask = ~(1 << 8);
             falseBuzzer = GetComponent<AudioSource>();
             sbManager = this;
+            enabled = false;
         }
             
         else
             Destroy(this.gameObject);
-        this.enabled = false;
     }
     void Update()
     {

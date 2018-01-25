@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 114811186046408088}
   - component: {fileID: 82812430281730500}
   m_Layer: 0
-  m_Name: ShapeButtonFullPrefab
+  m_Name: Shape Button Full Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

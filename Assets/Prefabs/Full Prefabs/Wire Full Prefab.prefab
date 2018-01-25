@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4507723524814976}
   - component: {fileID: 114695755925067738}
   m_Layer: 0
-  m_Name: WireFullPrefab
+  m_Name: Wire Full Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

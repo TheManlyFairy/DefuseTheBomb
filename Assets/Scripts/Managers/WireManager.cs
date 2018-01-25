@@ -23,6 +23,7 @@ public class WireManager : MonoBehaviour {
             wireManager = this;
             CreateWires();
             CalculateWireToCut();
+            enabled = false;
         }
         else
         {
@@ -63,8 +64,8 @@ public class WireManager : MonoBehaviour {
         {
             pos = new Vector3(transform.position.x, firstWirePosY + (spaceBetweenWires * i), transform.position.z);
             instWires[i] = Instantiate(prefabWire, pos, transform.rotation);
-            instWires[i] = Instantiate(prefabWire, pos, prefabWire.transform.rotation);
             instWires[i].Colorize(colors[Random.Range(0, colors.Length)]);
+            instWires[i].transform.parent = gameObject.transform;
         }
     }
     void CalculateWireToCut()

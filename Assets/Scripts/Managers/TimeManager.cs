@@ -51,7 +51,6 @@ public class TimeManager : MonoBehaviour {
             }
             if (minutes == 0 && seconds <= 15)
             {
-                Debug.Log("Sounds");
                 timerRush.Play();
             }
 
