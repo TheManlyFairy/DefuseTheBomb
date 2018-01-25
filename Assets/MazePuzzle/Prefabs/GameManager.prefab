@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_prefab: {fileID: 1324712514798434, guid: 11d4132380827de4ea90865ba5d53c1a,
     type: 2}
-  tile_prefab: {fileID: 1781844183962862, guid: 024b5aecdd8805b4b842f7e45dbf301f,
+  tile_prefab: {fileID: 1699040630237186, guid: 9f5d8ea36a5eea4488537ea1657bb94b,
     type: 2}
   mat1: {fileID: 2100000, guid: 1088f1fa2f78bf442a7cd0993c418710, type: 2}
   mat2: {fileID: 2100000, guid: 9a3d96d340c4639408467e9a40c0366d, type: 2}

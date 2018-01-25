@@ -11,7 +11,6 @@ public class FileManager : MonoBehaviour {
 
     private void Awake()
     {
-        Debug.Log(Application.dataPath);
         if (instance == null)
             instance = this;
         else

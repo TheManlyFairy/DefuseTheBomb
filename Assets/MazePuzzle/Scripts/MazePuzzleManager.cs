@@ -25,6 +25,7 @@ public class MazePuzzleManager : MonoBehaviour {
     Vector3 start_pos;
     AudioSource audio;
     Vector3 location;
+    Bounds bounds;
 
     private void Awake()
     {
@@ -43,13 +44,11 @@ public class MazePuzzleManager : MonoBehaviour {
         board = array.data[UnityEngine.Random.Range(0, array.data.Length )];
         InitBoard();
         transform.position = location;
+        bounds = new Bounds();
+        foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
+            bounds.Encapsulate(renderer.bounds);
     }
 
-    private void Update()
-    {
-        //if (player.transform.position.y != start_pos.y)
-        //    Fail();
-    }
 
     private void OnDisable()
     {
@@ -71,7 +70,7 @@ public class MazePuzzleManager : MonoBehaviour {
         {
             for (int c = 0; c < board.Size.y; c++)
             {
-                GameObject tile = Instantiate(tile_prefab, new Vector3(origin.x+c* tile_size.x, 0, origin.y+r*tile_size.z), Quaternion.identity);
+                GameObject tile = Instantiate(tile_prefab, new Vector3(origin.x+c* tile_size.x, 0, origin.y+r*tile_size.z), tile_prefab.transform.rotation);
                 tile.transform.parent = gameObject.transform;
                 if ((c + r * board.Size.y) % 2 == 0)
                     tile.GetComponent<Renderer>().material = mat1;
