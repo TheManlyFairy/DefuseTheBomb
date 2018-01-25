@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class ShapeButton : MonoBehaviour, IComparable<ShapeButton> {
 
-    ShapeButtonManager sbm;
+    ShapeButtonManager sbManager;
+    AudioSource audio;
     Material ButtonLight;
+    float timeToWait;
     bool isPressed;
+
     public int orderID;
 
 	// Use this for initialization
@@ -15,7 +18,8 @@ public class ShapeButton : MonoBehaviour, IComparable<ShapeButton> {
     {
         ButtonLight = transform.GetChild(0).GetComponent<Renderer>().material;
         isPressed = false;
-        sbm = ShapeButtonManager.sbManager;
+        audio = GetComponent<AudioSource>();
+        sbManager = ShapeButtonManager.sbManager;
 	}
 	
 	public bool IsPressed() { return isPressed; }
@@ -23,11 +27,16 @@ public class ShapeButton : MonoBehaviour, IComparable<ShapeButton> {
     {
         isPressed = true;
         ButtonLight.SetColor("_EmissionColor", Color.green);
+        audio.Play();
     }
     public void LightOff()
     {
         isPressed = false;
         ButtonLight.SetColor("_EmissionColor", new Color(0.5f, 0.5f, 0.5f));
+    }
+    public void FlashRed()
+    {
+        ButtonLight.SetColor("_EmissionColor", new Color(1f, 0f, 0f));
     }
     public void SetButton(int id, Texture tex)
     {
@@ -38,7 +47,6 @@ public class ShapeButton : MonoBehaviour, IComparable<ShapeButton> {
     {
         throw new NotImplementedException();
     }
-
     
 }
 

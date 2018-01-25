@@ -7,10 +7,11 @@ public class ShapeButtonManager : MonoBehaviour {
     public static ShapeButtonManager sbManager;
     public List<Texture> textures;
     public List<ShapeButton> buttons;
-    static List<ShapeButton> staticButtons;
+
+    AudioSource falseBuzzer;
     Dictionary<Texture, int> dict;
-    static int nextButton;
     LayerMask lightMask;
+    int nextButton;
 
     void Awake () 
     {
@@ -19,9 +20,9 @@ public class ShapeButtonManager : MonoBehaviour {
             InitDictionary(); // for storing each textures and its order ID
             ShuffleTextures(); // shuffles the texture list
             InitButtons(); // initiate four buttons with random textures
-            staticButtons = buttons;
             nextButton = 0;
             lightMask = ~(1 << 8);
+            falseBuzzer = GetComponent<AudioSource>();
             sbManager = this;
         }
             
@@ -42,7 +43,7 @@ public class ShapeButtonManager : MonoBehaviour {
                 }
                 else if (!hit.collider.gameObject.transform.parent.GetComponent<ShapeButton>().IsPressed())
                 {
-                    CheckPressOrder(hit.collider.gameObject.transform.parent.GetComponent<ShapeButton>().orderID);
+                    
                 }
             }
         }
@@ -78,25 +79,32 @@ public class ShapeButtonManager : MonoBehaviour {
         }
     }
 
-    public static void CheckPressOrder(int buttonId)
+    public void CheckPressOrder(int buttonId)
     {
-       if (buttonId == staticButtons[nextButton].orderID)
+       if (buttonId == buttons[nextButton].orderID)
         {
-            
-            staticButtons[nextButton].LightUp();
+            buttons[nextButton].LightUp();
             nextButton++;
         }
         else
         {
-            ResetAllButtons();
-            nextButton = 0;
+            StartCoroutine(FlashRed());
         }
     }
-    public static void ResetAllButtons()
+
+    IEnumerator FlashRed()
     {
-       for (int i=0; i<staticButtons.Count; i++)
+        falseBuzzer.Play();
+        for(int i=0; i<buttons.Count; i++)
         {
-            staticButtons[i].LightOff();
+            buttons[i].FlashRed();
+        }
+
+        yield return new WaitForSeconds(falseBuzzer.clip.length);
+
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].LightOff();
         }
         nextButton = 0;
     }
