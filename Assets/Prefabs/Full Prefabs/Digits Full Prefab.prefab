@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 82233172155253508}
   - component: {fileID: 114843593139467712}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Digits Full Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
