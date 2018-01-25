@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114720258493165872}
   - component: {fileID: 114656040301591596}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Maze Full Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
