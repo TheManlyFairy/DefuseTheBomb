@@ -47,6 +47,7 @@ public class MazePuzzleManager : MonoBehaviour {
         bounds = new Bounds();
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
             bounds.Encapsulate(renderer.bounds);
+        enabled = false;
     }
 
 
@@ -65,7 +66,7 @@ public class MazePuzzleManager : MonoBehaviour {
     public void InitBoard()
     {
         Vector3 tile_size = tile_prefab.GetComponent<Renderer>().bounds.size;
-        Vector2 origin = new Vector2(-(board.Size.y-1)* tile_size.z/2, -(board.Size.x-1) * tile_size.x/2);
+        Vector2 origin = new Vector2(-(board.Size.y-1)* tile_size.y/2, -(board.Size.x-1) * tile_size.x/2);
         for (int r = 0; r < board.Size.x; r++)
         {
             for (int c = 0; c < board.Size.y; c++)
@@ -83,7 +84,7 @@ public class MazePuzzleManager : MonoBehaviour {
                 if (board.StartPos.x==c && board.StartPos.y==r)
                 {
                     //Debug.Log();
-                    player=Instantiate(player_prefab,new Vector3(tile.transform.position.x, tile.transform.position.y, -player_prefab.GetComponent<Renderer>().bounds.size.z / 2), Quaternion.identity);
+                    player=Instantiate(player_prefab,new Vector3(tile.transform.position.x, tile.transform.position.y, -player_prefab.GetComponent<Renderer>().bounds.size.z / 2), player_prefab.transform.rotation);
                     player.transform.parent = gameObject.transform;
                     start_pos = player.transform.position;
                     //start_pos = new Vector3(tile.transform.position.x, tile.transform.position.y, -player_prefab.GetComponent<Renderer>().bounds.size.z / 2);
