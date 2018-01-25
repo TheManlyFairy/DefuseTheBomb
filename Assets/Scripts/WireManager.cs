@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WireManager : MonoBehaviour {
 
+    public static WireManager wireManager;
     public Wire prefabWire;
-    public WireManager wireManager;
-    public float wireHeight;
+    public float wireScale;
     public float spaceBetweenWires;
 
     Wire[] instWires;
@@ -22,13 +23,11 @@ public class WireManager : MonoBehaviour {
             wireManager = this;
             CreateWires();
             CalculateWireToCut();
-            Debug.Log("cut wire number " + (wireToCut + 1));
         }
         else
         {
             Destroy(this.gameObject);
         }
-        this.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -40,7 +39,9 @@ public class WireManager : MonoBehaviour {
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, 100))
             {
-                if(instWires[wireToCut].Equals(hit.collider.gameObject.GetComponent<Wire>()))
+                Wire clickedWire = hit.transform.parent.GetComponent<Wire>();
+                clickedWire.Cut();
+                if (instWires[wireToCut].Equals(clickedWire))
                 {
                     Debug.Log("Correct");
                 }
@@ -55,18 +56,16 @@ public class WireManager : MonoBehaviour {
     {
         int amountOfWires = Random.Range(4, 7);
         float firstWirePosY = transform.position.y + ((amountOfWires - 1) * 0.3f);
-        Vector2 pos;
+        Vector3 pos;
         instWires = new Wire[amountOfWires];
         
         for (int i=0; i<instWires.Length; i++)
         {
-            pos = new Vector2(transform.position.x, firstWirePosY + (spaceBetweenWires * i));
-            instWires[i] = Instantiate(prefabWire, pos, transform.rotation);
+            pos = new Vector3(transform.position.x, firstWirePosY + (spaceBetweenWires * i), transform.position.z);
+            instWires[i] = Instantiate(prefabWire, pos, prefabWire.transform.rotation);
             instWires[i].Colorize(colors[Random.Range(0, colors.Length)]);
-            instWires[i].transform.localScale = new Vector3(instWires[i].transform.localScale.x, wireHeight, instWires[i].transform.localScale.z);
         }
     }
-
     void CalculateWireToCut()
     {
         switch(instWires.Length)
@@ -78,6 +77,8 @@ public class WireManager : MonoBehaviour {
             case 6:
                 CalculateWireToCutFrom6Wires(); break;
         }
+
+        Debug.Log("cut wire number " + (wireToCut+1));
     }
     void CalculateWireToCutFrom4Wires()
     {
