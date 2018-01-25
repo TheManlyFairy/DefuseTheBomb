@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minutes: 0
-  seconds: 50
+  seconds: 40
 --- !u!1001 &1576013857
 Prefab:
   m_ObjectHideFlags: 0
