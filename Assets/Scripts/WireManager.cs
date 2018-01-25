@@ -62,11 +62,8 @@ public class WireManager : MonoBehaviour {
         for (int i=0; i<instWires.Length; i++)
         {
             pos = new Vector3(transform.position.x, firstWirePosY + (spaceBetweenWires * i), transform.position.z);
-<<<<<<< HEAD
             instWires[i] = Instantiate(prefabWire, pos, transform.rotation);
-=======
             instWires[i] = Instantiate(prefabWire, pos, prefabWire.transform.rotation);
->>>>>>> Cut_The_Wire
             instWires[i].Colorize(colors[Random.Range(0, colors.Length)]);
         }
     }

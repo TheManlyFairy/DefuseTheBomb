@@ -9,33 +9,26 @@ public class TimeManager : MonoBehaviour {
     public static TimeManager timeManager;
     public int minutes, seconds;
 
-<<<<<<< HEAD
-    Text timerText;
-=======
     AudioSource timerRush;
     Text timerText;
     float countdownDelay;
->>>>>>> User_Interface
-
-	// Use this for initialization
+    
+    // Use this for initialization
 	void Start ()
     {
         if (timeManager == null)
         {
             timeManager = this;
-<<<<<<< HEAD
+
             timerText = GetComponent<Text>();
             countdownDelay = 1f;
             Time.timeScale = 1;
-=======
-
             timerText = GetComponent<Text>();
             timerRush = GetComponent<AudioSource>();
 
             countdownDelay = 1f;
             Time.timeScale = 1;
 
->>>>>>> User_Interface
             StartCoroutine(Countdown());
         }
         else
