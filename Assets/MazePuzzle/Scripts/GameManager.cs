@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     GameObject player;
     Vector3 start_pos;
     AudioSource audio;
+    Vector3 location;
 
     private void Awake()
     {
@@ -31,14 +32,17 @@ public class GameManager : MonoBehaviour {
             instance = this;
         else
             Destroy(gameObject);
+        location = transform.position;
         audio = gameObject.GetComponent<AudioSource>();        
     }
 
     private void Start()
     {
+        transform.position = Vector3.zero;
         ArrayWrapper<Board> array = FileManager.instance.Load<ArrayWrapper<Board>>(txt);  
         board = array.data[UnityEngine.Random.Range(0, array.data.Length )];
         InitBoard();
+        transform.position = location;
     }
 
     private void Update()
