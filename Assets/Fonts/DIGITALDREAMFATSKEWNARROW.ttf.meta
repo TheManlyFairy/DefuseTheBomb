@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a4a4507936024d9418167437a1ed08bc
+timeCreated: 1516875425
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Digital dream Fat Skew Narrow
+  fontNames:
+  - Digital dream Fat Skew Narrow
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: e9f3d5a40d441b74fb455ad0789662b2
 folderAsset: yes
 timeCreated: 1515425542
@@ -8,6 +9,11 @@ guid: dd2a2e75e95f10e4eb88a9a850025731
 folderAsset: yes
 timeCreated: 1514287133
 >>>>>>> Shape_Buttons
+=======
+guid: e9dc747a1f4393349bebe34ab07f5d2f
+folderAsset: yes
+timeCreated: 1516875934
+>>>>>>> User_Interface
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

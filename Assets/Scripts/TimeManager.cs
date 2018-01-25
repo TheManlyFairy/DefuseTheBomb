@@ -8,9 +8,14 @@ public class TimeManager : MonoBehaviour {
 
     public static TimeManager timeManager;
     public int minutes, seconds;
-    float countdownDelay;
 
+<<<<<<< HEAD
     Text timerText;
+=======
+    AudioSource timerRush;
+    Text timerText;
+    float countdownDelay;
+>>>>>>> User_Interface
 
 	// Use this for initialization
 	void Start ()
@@ -18,9 +23,19 @@ public class TimeManager : MonoBehaviour {
         if (timeManager == null)
         {
             timeManager = this;
+<<<<<<< HEAD
             timerText = GetComponent<Text>();
             countdownDelay = 1f;
             Time.timeScale = 1;
+=======
+
+            timerText = GetComponent<Text>();
+            timerRush = GetComponent<AudioSource>();
+
+            countdownDelay = 1f;
+            Time.timeScale = 1;
+
+>>>>>>> User_Interface
             StartCoroutine(Countdown());
         }
         else
@@ -28,12 +43,6 @@ public class TimeManager : MonoBehaviour {
             Destroy(timerText.gameObject);
             Destroy(this.gameObject);
         }
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        
 	}
 
     IEnumerator Countdown()
@@ -47,12 +56,16 @@ public class TimeManager : MonoBehaviour {
                 seconds = 59;
                 minutes--;
             }
+            if (minutes == 0 && seconds <= 15)
+            {
+                Debug.Log("Sounds");
+                timerRush.Play();
+            }
 
             timerText.text = DigitalTimeDisplay();
         }
     }
-
-    public string DigitalTimeDisplay()
+    string DigitalTimeDisplay()
     {
         string secondString, minuteString;
         if (seconds < 10)
@@ -67,4 +80,5 @@ public class TimeManager : MonoBehaviour {
 
         return minuteString + ":" + secondString;
     }
+
 }
