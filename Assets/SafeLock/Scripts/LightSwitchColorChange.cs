@@ -34,6 +34,8 @@ public class LightSwitchColorChange : MonoBehaviour {
 
 			rend = button3.GetComponent<Renderer> ();
 			rend.material.color = Color.green;
+
+			AudioManager.instance.PlaySuccess ();
 		}
 	
 
@@ -54,6 +56,8 @@ public class LightSwitchColorChange : MonoBehaviour {
 
 		rend = button3.GetComponent<Renderer> ();
 		rend.material.color = Color.red;
+
+		AudioManager.instance.PlayFailed ();
 
 		yield return new WaitForSeconds(1);
 
