@@ -9,7 +9,7 @@ public class ButtonSelectionController : MonoBehaviour {
 	RaycastHit hit;
 
 	// Update is called once per frame
-	void FixedUpdate () 
+	void Update () 
 	{
 		if (Input.touchCount > 0) 
 		{
@@ -41,7 +41,7 @@ public class ButtonSelectionController : MonoBehaviour {
 		selectedObject = obj;
 
 		Renderer rend = selectedObject.GetComponent<Renderer> ();
-		rend.material.color = Color.red;
+		rend.material.color = Color.gray;
 		selectedObject.isSelected = true;
 	}
 

@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class CodeManager : MonoBehaviour {
 
-	public LightSwitchColorChange button1;
-	public LightSwitchColorChange button2;
-	public LightSwitchColorChange button3;
+	public static CodeManager instance;
+
+	public FirstButtonStep button1;
+	public ButtonInputControl button2;
+	public ButtonInputControl button3;
 
 	public int codeNumber1;
 	public int codeNumber2;
 	public int codeNumber3;
 
+	void Awake()
+	{
+		if (instance == null)
+			instance = this;
+		else
+			Destroy (gameObject);
+
+		button1.codeNumber = Random.Range(1,6);
+	}
+
 	// Use this for initialization
 	void Start () 
 	{
-		button1.codeNumber = Random.Range(1,6);
 		MakeCodeNumber (button1.codeNumber);
 
 		codeNumber1 = button1.codeNumber;
@@ -23,14 +34,7 @@ public class CodeManager : MonoBehaviour {
 		codeNumber3 = button3.codeNumber;
 
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		if (button1.buttonInputControll.isOnRightStep && button2.buttonInputControll.isOnRightStep && button3.buttonInputControll.isOnRightStep)
-			Debug.Log ("You diffused the bomb and saved millions of lives!\nGet this man a cookie!");
-		
-	}
+
 
 	void MakeCodeNumber(int firstCodeNumber)
 	{
@@ -68,10 +72,7 @@ public class CodeManager : MonoBehaviour {
 			button2.codeNumber = firstCodeNumber - 1;
 			button3.codeNumber = firstCodeNumber - 3;
 			break;
-	
-			default:
-			Debug.Log("Nothing works");
-			break;
+
 		}
 
 	}

@@ -8,7 +8,7 @@ public class ButtonInputControl : MonoBehaviour {
 	public bool isSelected;
 	public uint stepNumber;
 	public bool isOnRightStep;
-	LightSwitchColorChange codeSwitch;
+	public int codeNumber;
 
 	// Use this for initialization
 	void Start () 
@@ -16,7 +16,6 @@ public class ButtonInputControl : MonoBehaviour {
 		isSelected = false;
 		isOnRightStep = false;
 		stepNumber = 1;
-		codeSwitch = GetComponent<LightSwitchColorChange> ();
 	}
 	
 	// Update is called once per frame
@@ -44,11 +43,12 @@ public class ButtonInputControl : MonoBehaviour {
 				}
 			}
 
-			if (stepNumber == codeSwitch.codeNumber)
-				isOnRightStep = true;
-			
-			else if(stepNumber != codeSwitch.codeNumber)
-				isOnRightStep = false;
-		} 
+
 		}
+
+		if (stepNumber == codeNumber)
+			isOnRightStep = true;
+		else
+			isOnRightStep = false;
+	}
 }
