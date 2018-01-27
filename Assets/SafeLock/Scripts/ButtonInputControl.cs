@@ -16,6 +16,7 @@ public class ButtonInputControl : MonoBehaviour {
 		isSelected = false;
 		isOnRightStep = false;
 		stepNumber = 1;
+		enabled = false;
 	}
 	
 	// Update is called once per frame
