@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShapeButtonManager : MonoBehaviour {
+public class ShapeButtonManager : Manager {
 
     public static ShapeButtonManager sbManager;
     public List<Texture> textures;
@@ -41,10 +41,11 @@ public class ShapeButtonManager : MonoBehaviour {
                 if (!hit.collider.gameObject.GetComponent<ShapeButton>().IsPressed())
                 {
                     CheckPressOrder(hit.collider.gameObject.GetComponent<ShapeButton>().orderID);
-                }
-                else if (!hit.collider.gameObject.transform.parent.GetComponent<ShapeButton>().IsPressed())
-                {
-                    
+                    if(AllButtonsLit())
+                    {
+                        isPuzzleSolved = true;
+                        GameManager.CheckAllPuzzles();
+                    }
                 }
             }
         }
@@ -93,16 +94,28 @@ public class ShapeButtonManager : MonoBehaviour {
         }
     }
 
+    public bool AllButtonsLit()
+    {
+        for(int i=0; i<buttons.Count; i++)
+        {
+            if (!buttons[i].IsPressed())
+                return false;
+        }
+        return true;
+    }
     IEnumerator FlashRed()
     {
+
+        TimeManager.AccelerateTime();
         falseBuzzer.Play();
+        enabled = false;
         for(int i=0; i<buttons.Count; i++)
         {
             buttons[i].FlashRed();
         }
 
         yield return new WaitForSeconds(falseBuzzer.clip.length);
-
+        enabled = true;
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].LightOff();

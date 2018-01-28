@@ -5,7 +5,7 @@ using UnityEngine;
 
 [Serializable] public class ArrayWrapper<T> { public T[] data; }
 
-public class MazePuzzleManager : MonoBehaviour {
+public class MazePuzzleManager : Manager {
 
     public static MazePuzzleManager instance;
 
@@ -104,6 +104,7 @@ public class MazePuzzleManager : MonoBehaviour {
         player.transform.localPosition = start_pos;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         StartCoroutine(PlayerSleep());
+        TimeManager.AccelerateTime();
     }
 
     IEnumerator PlayerSleep()
@@ -118,5 +119,7 @@ public class MazePuzzleManager : MonoBehaviour {
     {
         audio.clip = win;
         audio.Play();
+        isPuzzleSolved = true;
+        GameManager.CheckAllPuzzles();
     }
 }

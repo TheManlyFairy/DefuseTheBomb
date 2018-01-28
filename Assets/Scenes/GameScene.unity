@@ -294,7 +294,7 @@ RectTransform:
   m_Children:
   - {fileID: 519203016}
   m_Father: {fileID: 1071433147}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -341,48 +341,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 261149955}
-        m_MethodName: FocusCameraAtObject
+        m_MethodName: FocusCameraAtManager
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 299132104}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 299132101}
+          m_ObjectArgumentAssemblyTypeName: Manager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1071433146}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 266469157}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 299132101}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -525,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &266469158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -538,7 +505,7 @@ RectTransform:
   m_Children:
   - {fileID: 605011225}
   m_Father: {fileID: 1416842523}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -561,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0d8b4b767566e4ca5fc05eef5b50fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPuzzleSolved: 0
   player_prefab: {fileID: 1324712514798434, guid: 11d4132380827de4ea90865ba5d53c1a,
     type: 2}
   tile_prefab: {fileID: 1699040630237186, guid: 9f5d8ea36a5eea4488537ea1657bb94b,
@@ -570,11 +538,6 @@ MonoBehaviour:
   fail: {fileID: 8300000, guid: d1e70716eadcd4e439a7236537f9db78, type: 3}
   win: {fileID: 8300000, guid: 7b2fb907a2e5c974f8bcd338b7bd1532, type: 3}
   txt: {fileID: 4900000, guid: f495a0d8b5dcff64a9ce8fa1ed66ea84, type: 3}
---- !u!4 &299132104 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4587833928422250, guid: f7a1c98f9d64ee3408445bd18be3da15,
-    type: 2}
-  m_PrefabInternal: {fileID: 2008029586}
 --- !u!1 &310902584
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +550,7 @@ GameObject:
   - component: {fileID: 310902587}
   - component: {fileID: 310902586}
   m_Layer: 5
-  m_Name: BTN_ZoomIntoWSafeLock
+  m_Name: BTN_ZoomIntoSafeLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,70 +615,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 261149955}
-        m_MethodName: FocusCameraAtObject
+        m_MethodName: FocusCameraAtManager
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1274794915}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 1531492749}
+          m_ObjectArgumentAssemblyTypeName: Manager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1071433146}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 266469157}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 376516828}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 453802916}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1520819777}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -752,12 +660,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 310902584}
---- !u!114 &376516828 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114584511254630014, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
-    type: 2}
-  m_PrefabInternal: {fileID: 596869909}
-  m_Script: {fileID: 11500000, guid: 00e93e6dc2afdae43961e1775743f3ff, type: 3}
 --- !u!114 &386050026 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114843593139467712, guid: 359cedaa989010b4bbf56a0bcd06d500,
@@ -841,48 +743,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 261149955}
-        m_MethodName: FocusCameraAtObject
+        m_MethodName: FocusCameraAtManager
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 830754226}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 386050026}
+          m_ObjectArgumentAssemblyTypeName: Manager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1071433146}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 266469157}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 479046580}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -987,12 +856,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417455709}
---- !u!114 &453802916 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114851776297040708, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
-    type: 2}
-  m_PrefabInternal: {fileID: 596869909}
-  m_Script: {fileID: 11500000, guid: 00e93e6dc2afdae43961e1775743f3ff, type: 3}
 --- !u!1 &458861613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +886,7 @@ RectTransform:
   m_Children:
   - {fileID: 885777630}
   m_Father: {fileID: 1071433147}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1070,48 +933,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 261149955}
-        m_MethodName: FocusCameraAtObject
+        m_MethodName: FocusCameraAtManager
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1052019683}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 1052019685}
+          m_ObjectArgumentAssemblyTypeName: Manager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1071433146}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 266469157}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1052019685}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1222,11 +1052,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1576013857}
   m_Script: {fileID: 11500000, guid: 3b7ae89f5b5a84644ba0577c5a838937, type: 3}
---- !u!4 &479046581 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4507723524814976, guid: ca4f23ff15c167f49b31356854ca6250,
-    type: 2}
-  m_PrefabInternal: {fileID: 1576013857}
 --- !u!1 &519203015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1157,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4408286374868736, guid: a62dc8b16d50cfe4c8cb1173c473bf9a, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114631557368857184, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
         type: 2}
@@ -1389,6 +1214,22 @@ Prefab:
     - target: {fileID: 114066026677780998, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972479589801792, guid: a62dc8b16d50cfe4c8cb1173c473bf9a, type: 2}
+      propertyPath: m_Name
+      value: SafeLockManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722262527264844, guid: a62dc8b16d50cfe4c8cb1173c473bf9a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722262527264844, guid: a62dc8b16d50cfe4c8cb1173c473bf9a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722262527264844, guid: a62dc8b16d50cfe4c8cb1173c473bf9a, type: 2}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1481,72 +1322,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1071433146}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 266469157}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1052019685}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 479046580}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 386050026}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 299132101}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &605011227
@@ -1582,11 +1357,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605011224}
---- !u!4 &830754226 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4336227681751726, guid: 359cedaa989010b4bbf56a0bcd06d500,
-    type: 2}
-  m_PrefabInternal: {fileID: 1842000163}
 --- !u!1 &885777629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,7 +1462,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4190502012124606, guid: 7357a71f40455fc4cacdb9160ed0cedf, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7357a71f40455fc4cacdb9160ed0cedf, type: 2}
@@ -1762,11 +1532,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!4 &1052019683 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4190502012124606, guid: 7357a71f40455fc4cacdb9160ed0cedf,
-    type: 2}
-  m_PrefabInternal: {fileID: 903532913}
 --- !u!114 &1052019685 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114811186046408088, guid: 7357a71f40455fc4cacdb9160ed0cedf,
@@ -1798,13 +1563,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 458861614}
-  - {fileID: 2091201822}
-  - {fileID: 388990962}
   - {fileID: 164514852}
+  - {fileID: 458861614}
+  - {fileID: 388990962}
+  - {fileID: 2091201822}
   - {fileID: 310902585}
   m_Father: {fileID: 1416842523}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1879,11 +1644,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127759877}
---- !u!4 &1274794915 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4408286374868736, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
-    type: 2}
-  m_PrefabInternal: {fileID: 596869909}
 --- !u!1 &1416842519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,11 +1730,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -1.0699997}
   m_LocalScale: {x: 0.009259259, y: 0.009259259, z: 0.009259259}
   m_Children:
-  - {fileID: 1460714881}
   - {fileID: 266469158}
   - {fileID: 1071433147}
+  - {fileID: 1460714881}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1989,9 +1749,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 1416842519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff5f8d812102c743ba1c8c694e7f112, type: 3}
+  m_Script: {fileID: 11500000, guid: 39444bdaf82e701459482e18fdcc1c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1433478720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1433478722}
+  - component: {fileID: 1433478721}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1433478721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433478720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99eff6040e49a14097c2188ed0abb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1433478722
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433478720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460714880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +1822,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1416842523}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2161,12 +1961,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minutes: 15
   seconds: 0
---- !u!114 &1520819777 stripped
+--- !u!114 &1531492749 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114066026677780998, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
+  m_PrefabParentObject: {fileID: 114776394740206436, guid: a62dc8b16d50cfe4c8cb1173c473bf9a,
     type: 2}
   m_PrefabInternal: {fileID: 596869909}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fa0a25375abf86a459446107de31942d, type: 3}
 --- !u!1001 &1576013857
 Prefab:
   m_ObjectHideFlags: 0
@@ -2252,7 +2052,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4336227681751726, guid: 359cedaa989010b4bbf56a0bcd06d500, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4336227681751726, guid: 359cedaa989010b4bbf56a0bcd06d500, type: 2}
       propertyPath: m_LocalScale.x
@@ -2338,7 +2138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2008029586
 Prefab:
@@ -2507,7 +2307,7 @@ RectTransform:
   m_Children:
   - {fileID: 1127759878}
   m_Father: {fileID: 1071433147}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2554,48 +2354,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 261149955}
-        m_MethodName: FocusCameraAtObject
+        m_MethodName: FocusCameraAtManager
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 479046581}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgument: {fileID: 479046580}
+          m_ObjectArgumentAssemblyTypeName: Manager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1071433146}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 266469157}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 479046580}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null

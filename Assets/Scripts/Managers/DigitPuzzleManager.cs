@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DigitPuzzleManager : MonoBehaviour {
+public class DigitPuzzleManager : Manager {
 
     public static DigitPuzzleManager instance;
 
@@ -52,11 +52,14 @@ public class DigitPuzzleManager : MonoBehaviour {
         {
             audio.clip = win;
             audio.Play();
+            isPuzzleSolved = true;
+            GameManager.CheckAllPuzzles();
         }
         else
         {
             audio.clip = fail;
             audio.Play();
+            TimeManager.AccelerateTime();
         }
     }
 

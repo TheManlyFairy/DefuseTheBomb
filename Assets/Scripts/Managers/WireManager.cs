@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WireManager : MonoBehaviour {
+public class WireManager : Manager {
 
     public static WireManager wireManager;
     public Wire prefabWire;
@@ -11,7 +11,7 @@ public class WireManager : MonoBehaviour {
     public float spaceBetweenWires;
 
     Wire[] instWires;
-    Color[] colors = { Color.red, Color.blue, Color.yellow, Color.white, Color.black };
+    Color[] colors = { Color.red, Color.blue, Color.yellow, Color.white, Color.green };
     int wireToCut;
 
 	
@@ -44,11 +44,12 @@ public class WireManager : MonoBehaviour {
                 clickedWire.Cut();
                 if (instWires[wireToCut].Equals(clickedWire))
                 {
-                    Debug.Log("Correct");
+                    isPuzzleSolved = true;
+                    GameManager.CheckAllPuzzles();
                 }
                 else
                 {
-                    Debug.Log("False");
+                    TimeManager.AccelerateTime();
                 }
             }
         }	
@@ -108,7 +109,7 @@ public class WireManager : MonoBehaviour {
     }
     void CalculateWireToCutFrom5Wires()
     {
-        if(instWires[instWires.Length-1].GetColor() == Color.black)
+        if(instWires[instWires.Length-1].GetColor() == Color.green)
         {
             wireToCut = 3;
         }
@@ -116,7 +117,7 @@ public class WireManager : MonoBehaviour {
         {
             wireToCut = 0;
         }
-        else if (CountBlackWires() == 0)
+        else if (CountgreenWires() == 0)
         {
             wireToCut = 1;
         }
@@ -175,12 +176,12 @@ public class WireManager : MonoBehaviour {
         }
         return count;
     }
-    int CountBlackWires()
+    int CountgreenWires()
     {
         int count = 0;
         for (int i = 0; i < instWires.Length; i++)
         {
-            if (instWires[i].GetColor() == Color.black)
+            if (instWires[i].GetColor() == Color.green)
                 count++;
         }
         return count;

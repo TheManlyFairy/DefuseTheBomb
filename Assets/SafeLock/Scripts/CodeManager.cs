@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CodeManager : MonoBehaviour {
+public class CodeManager : Manager {
 
 	public static CodeManager instance;
 

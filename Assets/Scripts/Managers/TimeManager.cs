@@ -73,4 +73,9 @@ public class TimeManager : MonoBehaviour {
         return minuteString + ":" + secondString;
     }
 
+    public static void AccelerateTime()
+    {
+        timeManager.countdownDelay *= 0.4f;
+        GameManager.StrikeDown();
+    }
 }
