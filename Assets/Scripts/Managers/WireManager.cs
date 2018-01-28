@@ -150,6 +150,7 @@ public class WireManager : Manager {
         }
     }
 
+    #region wire counting methods
     int CountRedWires()
     {
         int count = 0;
@@ -208,4 +209,5 @@ public class WireManager : Manager {
                 wireToCut = i;
         }
     }
+    #endregion
 }
