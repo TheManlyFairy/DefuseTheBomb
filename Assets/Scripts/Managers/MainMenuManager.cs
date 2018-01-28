@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIMenuManager : MonoBehaviour {
+public class MainMenuManager : MonoBehaviour {
 
-	public static UIMenuManager instance;
+	public static MainMenuManager instance;
 
 	// Use this for initialization
 	void Awake () 

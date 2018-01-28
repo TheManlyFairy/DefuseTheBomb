@@ -41,15 +41,18 @@ public class WireManager : Manager {
             if(Physics.Raycast(ray, out hit, 100))
             {
                 Wire clickedWire = hit.transform.parent.GetComponent<Wire>();
-                clickedWire.Cut();
-                if (instWires[wireToCut].Equals(clickedWire))
+                if (!clickedWire.IsCut)
                 {
-                    isPuzzleSolved = true;
-                    GameManager.CheckAllPuzzles();
-                }
-                else
-                {
-                    TimeManager.AccelerateTime();
+                    clickedWire.Cut();
+                    if (instWires[wireToCut].Equals(clickedWire))
+                    {
+                        isPuzzleSolved = true;
+                        GameManager.CheckAllPuzzles();
+                    }
+                    else
+                    {
+                        TimeManager.AccelerateTime();
+                    }
                 }
             }
         }	
@@ -67,6 +70,7 @@ public class WireManager : Manager {
             instWires[i] = Instantiate(prefabWire, pos, transform.rotation);
             instWires[i].Colorize(colors[Random.Range(0, colors.Length)]);
             instWires[i].transform.parent = gameObject.transform;
+            instWires[i].transform.localScale *= wireScale;
         }
     }
     void CalculateWireToCut()

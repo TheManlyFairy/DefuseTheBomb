@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager gameManager;
     static int strikes;
-    Manager[] puzzleManagers;
+    public Manager[] puzzleManagers;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour {
     public static void StrikeDown()
     {
         strikes--;
-        Debug.Log(strikes + " left");
         if (strikes == 0)
             SceneManager.LoadScene("Main");
     }

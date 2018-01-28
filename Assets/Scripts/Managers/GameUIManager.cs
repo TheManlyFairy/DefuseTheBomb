@@ -5,14 +5,11 @@ using UnityEngine;
 public class GameUIManager : MonoBehaviour {
 
     public static GameUIManager manager;
-    GameObject ElementsSeenWhenZoomedIn, ElementsSeenWhenZoomedOut;
+    public GameObject ElementsSeenWhenZoomedIn, ElementsSeenWhenZoomedOut;
 	// Use this for initialization
 	void Start () {
+
         manager = this;
-
-        ElementsSeenWhenZoomedIn = transform.GetChild(0).gameObject;
-        ElementsSeenWhenZoomedOut = transform.GetChild(1).gameObject;
-
         ElementsSeenWhenZoomedIn.SetActive(false);
     }
 

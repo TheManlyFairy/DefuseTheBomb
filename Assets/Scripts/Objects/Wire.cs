@@ -7,6 +7,9 @@ public class Wire : MonoBehaviour {
     Color color;
     AudioSource cutSound;
     Transform cutWire, wireCover;
+    bool isCut = false;
+
+    public bool IsCut { get { return isCut; } }
     public void Colorize(Color c)
     {
         cutWire = transform.GetChild(0);
@@ -23,6 +26,7 @@ public class Wire : MonoBehaviour {
 
     public void Cut()
     {
+        isCut = true;
         cutSound.Play();
         wireCover.gameObject.SetActive(false);
     }
