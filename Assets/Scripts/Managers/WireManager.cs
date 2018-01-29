@@ -47,10 +47,12 @@ public class WireManager : Manager {
                     if (instWires[wireToCut].Equals(clickedWire))
                     {
                         isPuzzleSolved = true;
+                        AudioManager.instance.PlaySuccess();
                         GameManager.CheckAllPuzzles();
                     }
                     else
                     {
+                        AudioManager.instance.PlayFailed();
                         TimeManager.AccelerateTime();
                     }
                 }
