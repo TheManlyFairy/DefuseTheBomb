@@ -21,10 +21,9 @@ public class CodeManager : Manager {
 		else
 			Destroy (gameObject);
 
-		button1.codeNumber = Random.Range(1,6);
+		button1.codeNumber = Random.Range(1,6); // Set a random codeNumber for the first dial
 	}
 
-	// Use this for initialization
 	void Start () 
 	{
 		MakeCodeNumber (button1.codeNumber);
@@ -36,7 +35,7 @@ public class CodeManager : Manager {
 	}
 
 
-	void MakeCodeNumber(int firstCodeNumber)
+	void MakeCodeNumber(int firstCodeNumber) // Sets the middle and right dials corresponding to the first dial
 	{
 
 		switch (firstCodeNumber) 

@@ -8,7 +8,6 @@ public class ButtonSelectionController : MonoBehaviour {
 
 	RaycastHit hit;
 
-	// Update is called once per frame
 	void Update () 
 	{
 		if (Input.touchCount > 0) 
@@ -17,9 +16,10 @@ public class ButtonSelectionController : MonoBehaviour {
 
 			Ray ray = Camera.main.ScreenPointToRay (touch.position);
 
-			if (Physics.Raycast (ray, out hit) && touch.phase == TouchPhase.Ended) {
+			if (Physics.Raycast (ray, out hit) && touch.phase == TouchPhase.Ended) 
+			{
 
-				if (hit.collider.GetComponent<ButtonInputControl>()) 
+				if (hit.collider.GetComponent<ButtonInputControl>()) //Check if touch event was on a button
 				{
 					ButtonInputControl hitObject = hit.collider.gameObject.GetComponent<ButtonInputControl>();
 					SelectedButton (hitObject);
@@ -28,7 +28,7 @@ public class ButtonSelectionController : MonoBehaviour {
 		}
 	}
 
-	public void SelectedButton(ButtonInputControl obj)
+	public void SelectedButton(ButtonInputControl obj) // Set which button is selected
 	{
 		
 		if (selectedObject != null)
@@ -45,7 +45,7 @@ public class ButtonSelectionController : MonoBehaviour {
 		selectedObject.isSelected = true;
 	}
 
-	public void ClearSelection()
+	public void ClearSelection() // Clear selection from PREVIOUSLY SELECTED button
 	{
 		Renderer rend = selectedObject.GetComponent<Renderer> ();
 		rend.material.color = Color.white;

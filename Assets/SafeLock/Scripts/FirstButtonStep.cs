@@ -7,13 +7,12 @@ public class FirstButtonStep : MonoBehaviour {
 	int firstButtonCodeNumber;
 	public int codeNumber;
 
-	// Use this for initialization
 	void Start () 
 	{
 		RotateToStep (codeNumber);
 	}
 	
-	void RotateToStep(int digit)
+	void RotateToStep(int digit) // Rotates the dial to the right step after getting the step number
 	{
 		switch (digit) 
 		{
