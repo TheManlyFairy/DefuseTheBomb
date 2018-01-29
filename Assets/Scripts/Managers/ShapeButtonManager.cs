@@ -44,6 +44,7 @@ public class ShapeButtonManager : Manager {
                     if(AllButtonsLit())
                     {
                         isPuzzleSolved = true;
+                        AudioManager.instance.PlaySuccess();
                         GameManager.CheckAllPuzzles();
                     }
                 }

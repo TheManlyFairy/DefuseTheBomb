@@ -2140,7 +2140,7 @@ Prefab:
     - target: {fileID: 114695755925067738, guid: ca4f23ff15c167f49b31356854ca6250,
         type: 2}
       propertyPath: spaceBetweenWires
-      value: -0.6
+      value: -0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca4f23ff15c167f49b31356854ca6250, type: 2}
@@ -2220,6 +2220,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444358195156400, guid: 359cedaa989010b4bbf56a0bcd06d500,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 359cedaa989010b4bbf56a0bcd06d500, type: 2}
